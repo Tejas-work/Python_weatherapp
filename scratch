@@ -1,0 +1,38 @@
+import tkinter as tk
+from tkinter import ttk
+from tkinter import filedialog
+
+# Static Variables for the gui
+
+HEIGHT = 500
+WIDTH = 500
+
+root = tk.Tk()
+
+canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
+canvas.pack()
+
+frame = ttk.Frame(root, bg="black", bd=5)
+frame.place(relwidth=1, relheight=1)
+
+labelframe = ttk.LabelFrame(root, text="Open a file")
+labelframe.pack()
+
+
+
+def openfile():
+    self.filename = filedialog.askopenfilename(intialdir = "~/library", filetypes = (("txt", "*.txt"), ("all files", ".*"))).pack()
+    self.filelabel = Label(root, text = filename)
+    filelabel.pack()
+
+button = tk.Button(labelframe, text="Browse a file", command = openfile)
+button.pack()
+
+
+# File opening function
+
+# with open("file.txt", "r") as f:
+# Label(root, text=f.read()).pack()
+
+
+root.mainloop()
